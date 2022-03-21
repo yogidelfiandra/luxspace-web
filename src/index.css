@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.card {
+  cursor: pointer;
+}
+
+.card .card-shadow {
+  @apply transition duration-300 shadow-none h-full;
+}
+
+.card:hover .card-shadow {
+  @apply shadow-lg;
+}
+
 .overlay {
   @apply absolute;
 }
