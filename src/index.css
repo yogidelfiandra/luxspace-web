@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overlay {
+  @apply absolute;
+}
+.overlay * {
+  @apply transition-all duration-200;
+}
+.overlay .hoverable > * {
+  @apply opacity-0;
+}
+.overlay .hoverable:hover > * {
+  @apply opacity-100;
+}
+.overlay .video {
+  @apply absolute transform bg-blue-200 bg-no-repeat bg-center w-20 h-20 rounded-full items-center justify-center flex -translate-x-1/2 -translate-y-1/2;
+  background-image: url('./assets/images/icon-play.svg');
+  top: 50%;
+  left: 50%;
+}
