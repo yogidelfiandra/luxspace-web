@@ -1,11 +1,10 @@
-// import Logo from 'images/content/logo.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <header className='absolute w-full z-50 px-4 xl:px-24 '>
-      <div className='container mx-auto py-5'>
+      <div className='container mx-auto py-7'>
         <div className='flex flex-stretch items-center'>
           <div className='w-56 items-center flex'>
             <img
@@ -16,10 +15,10 @@ export default function Header() {
           <div className='w-full'></div>
           <div className='w-auto'>
             <ul
-              className='fixed bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center'
+              className='fixed text-base bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center xl:space-x-8'
               id='menu'
             >
-              <li className='mx-3 py-6 md:py-0'>
+              <li className='py-6 md:py-0'>
                 <Link
                   to='/showcase'
                   className='text-black md:text-white hover:underline'
@@ -27,7 +26,7 @@ export default function Header() {
                   Showcase
                 </Link>
               </li>
-              <li className='mx-3 py-6 md:py-0'>
+              <li className='py-6 md:py-0'>
                 <Link
                   to='/catalog'
                   className='text-black md:text-white hover:underline'
@@ -35,7 +34,7 @@ export default function Header() {
                   Catalog
                 </Link>
               </li>
-              <li className='mx-3 py-6 md:py-0'>
+              <li className='py-6 md:py-0'>
                 <Link
                   to='/delivery'
                   className='text-black md:text-white hover:underline'
@@ -43,7 +42,7 @@ export default function Header() {
                   Delivery
                 </Link>
               </li>
-              <li className='mx-3 py-6 md:py-0'>
+              <li className='py-6 md:py-0'>
                 <Link
                   to='/rewards'
                   className='text-black md:text-white hover:underline'
