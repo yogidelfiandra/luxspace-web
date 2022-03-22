@@ -4,8 +4,8 @@ import Sitemap from 'parts/Sitemap';
 import React from 'react';
 import Footer from '../parts/Footer';
 import Header from '../parts/Header';
-import Hero from '../parts/Hero';
 import BrowseRoom from '../parts/HomePage/BrowseRoom';
+import Hero from '../parts/HomePage/Hero';
 
 export default function HomePage(props) {
   return (

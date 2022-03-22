@@ -4,11 +4,11 @@ export default function Hero() {
   return (
     <section className='flex items-center hero'>
       <div className='w-full absolute z-20 inset-0 md:relative md:w-1/2 text-center flex flex-col justify-center hero-caption'>
-        <h1 className='text-3xl md:text-5xl leading-tight font-semibold'>
+        <h1 className='text-4xl leading-10 md:text-5xl md:leading-11 font-semibold'>
           The Room <br className='' />
           You've Dreaming
         </h1>
-        <h2 className='px-8 text-base md:px-0 md:text-lg my-6 tracking-wide'>
+        <h2 className='px-8 text-base leading-8 mt-2.5 mb-10 md:px-0'>
           Kami menyediakan furniture berkelas yang
           <br className='hidden lg:block' />
           membuat ruangan terasa homey
@@ -16,7 +16,7 @@ export default function Hero() {
         <div>
           <a
             href='#browse-the-room'
-            className='bg-pink-300 text-black hover:bg-black hover:text-pink-300 rounded-full px-8 py-3 mt-4 inline-block flex-none transition duration-200'
+            className='text-lg font-semibold bg-pink-300 text-black hover:bg-black hover:text-pink-300 rounded-full px-8 mt-8 py-3 inline-block flex-none transition duration-200'
           >
             Explore Now
           </a>
@@ -45,7 +45,7 @@ export default function Hero() {
           <img
             src='images/content/image-section-1.png'
             alt='hero 1'
-            className='absolute inset-0 md:relative w-full h-full object-cover object-center'
+            className='absolute md:relative opacity-80 md:opacity-100 w-full h-full object-cover object-center'
           />
         </div>
       </div>
