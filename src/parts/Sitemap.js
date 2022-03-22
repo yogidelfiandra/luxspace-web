@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Sitemap() {
   return (
     <section className=''>
-      <div className='border-t border-b border-gray-200 py-12 mt-16 px-4'>
-        <div className='flex justify-center mb-8'>
+      <div className='border-t border-b border-gray-200 py-18 mt-18 px-4 xl:mt-24 xl:py-18'>
+        <div className='flex justify-center mb-8 xl:mb-18'>
           <img
             src='images/content/logo.png'
             alt='Luxspace | Fulfill your house with beautiful furniture'
@@ -13,73 +14,73 @@ export default function Sitemap() {
         <aside className='container mx-auto'>
           <div className='flex flex-wrap -mx-4 justify-center'>
             <div className='px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion'>
-              <h5 className='text-lg font-semibold mb-2 relative'>Overview</h5>
+              <h5 className='text-lg font-semibold mb-4 relative'>Overview</h5>
               <ul className='h-0 invisible md:h-auto md:visible overflow-hidden'>
                 <li>
-                  <a href='/shipping' className='hover:underline py-1 block'>
+                  <Link to='/shipping' className='hover:underline mb-2 block'>
                     Shipping
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/refund' className='hover:underline py-1 block'>
+                  <Link to='/refund' className='hover:underline mb-2 block'>
                     Refund
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/promotion' className='hover:underline py-1 block'>
+                  <Link to='/promotion' className='hover:underline block'>
                     Promotion
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className='px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion'>
-              <h5 className='text-lg font-semibold mb-2 relative'>Company</h5>
+              <h5 className='text-lg font-semibold mb-4 relative'>Company</h5>
               <ul className='h-0 invisible md:h-auto md:visible overflow-hidden'>
                 <li>
-                  <a href='/about' className='hover:underline py-1 block'>
+                  <Link to='/about' className='hover:underline mb-2 block'>
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/career' className='hover:underline py-1 block'>
+                  <Link to='/career' className='hover:underline mb-2 block'>
                     Career
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/contact-us' className='hover:underline py-1 block'>
+                  <Link to='/contact-us' className='hover:underline block'>
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className='px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion'>
-              <h5 className='text-lg font-semibold mb-2 relative'>Explore</h5>
+              <h5 className='text-lg font-semibold mb-4 relative'>Explore</h5>
               <ul className='h-0 invisible md:h-auto md:visible overflow-hidden'>
                 <li>
-                  <a href='/terms-conds' className='hover:underline py-1 block'>
+                  <Link
+                    to='/terms-conds'
+                    className='hover:underline mb-2 block'
+                  >
                     Terms & Conds
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href='/privacy-policy'
-                    className='hover:underline py-1 block'
+                  <Link
+                    to='/privacy-policy'
+                    className='hover:underline mb-2 block'
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href='/for-developer'
-                    className='hover:underline py-1 block'
-                  >
+                  <Link to='/for-developer' className='hover:underline block'>
                     For Developer
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className='px-4 w-full md:w-3/12 mb-4 md:mb-0'>
-              <h5 className='text-lg font-semibold mb-2 relative'>
+              <h5 className='text-lg font-semibold mb-4 relative'>
                 Special Letter
               </h5>
               <form action='#'>
