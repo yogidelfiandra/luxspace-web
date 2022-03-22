@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function JustArrived() {
   return (
-    <section className='flex flex-col py-16 xl:px-24'>
-      <div className='container mx-auto mb-4'>
-        <div className='flex justify-center text-center mb-4'>
-          <h3 className='text-2xl capitalize font-semibold'>
+    <section className='flex flex-col py-18 xl:py-24 xl:px-24'>
+      <div className='container mx-auto'>
+        <div className='flex justify-center text-center mb-8 xl:mb-18'>
+          <h3 className='text-xl leading-9 capitalize font-semibold xl:text-2xl xl:leading-9.5'>
             Just Arrived <br className='' />
             this summer for you
           </h3>
@@ -14,7 +14,7 @@ export default function JustArrived() {
       <div className='overflow-x-hidden px-4' id='carousel'>
         <div className='container mx-auto'></div>
         {/* <!-- <div className="overflow-hidden z-10"> --> */}
-        <div className='flex -mx-4 flex-row relative'>
+        <div className='flex -mx-4 flex-row relative cursor-pointer'>
           {/* just arrived 1 */}
           <div className='px-4 relative card group'>
             <div
@@ -42,8 +42,10 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Cangkir Mauttie</h5>
-            <span className=''>IDR 89.300</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>
+              Cangkir Mauttie
+            </h5>
+            <span className='text-base'>IDR 89.300</span>
             <a href='details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
@@ -76,8 +78,10 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Bankyu Minimay</h5>
-            <span className=''>IDR 67.899</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>
+              Bankyu Minimay
+            </h5>
+            <span className='text-base'>IDR 67.899</span>
             <a href='details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
@@ -110,8 +114,10 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Buku Sidu Edition</h5>
-            <span className=''>IDR 120.699</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>
+              Buku Sidu Edition
+            </h5>
+            <span className='text-base'>IDR 120.699</span>
             <a href='details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
@@ -144,8 +150,8 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Watch Notes X</h5>
-            <span className=''>IDR 1.973.000</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>Watch Notes X</h5>
+            <span className='text-base'>IDR 1.973.000</span>
             <a href='details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
@@ -178,8 +184,10 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Racking Plants</h5>
-            <span className=''>IDR 599.400</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>
+              Racking Plants
+            </h5>
+            <span className='text-base'>IDR 599.400</span>
             <a href='details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
@@ -212,8 +220,10 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Racking Plants</h5>
-            <span className=''>IDR 599.400</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>
+              Racking Plants
+            </h5>
+            <span className='text-base'>IDR 599.400</span>
             <a href='#details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
@@ -246,8 +256,10 @@ export default function JustArrived() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-            <h5 className='text-lg font-semibold mt-4'>Racking Plants</h5>
-            <span className=''>IDR 599.400</span>
+            <h5 className='text-lg font-semibold mt-4 mb-1.5'>
+              Racking Plants
+            </h5>
+            <span className='text-base'>IDR 599.400</span>
             <a href='#details.html' className='stretched-link'>
               {/* <!-- fake children --> */}
             </a>
