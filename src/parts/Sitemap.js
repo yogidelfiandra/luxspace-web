@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default function Sitemap() {
   return (
-    <section className=''>
-      <div className='border-t border-b border-gray-200 py-18 mt-18 px-4 xl:mt-24 xl:py-18'>
+    <section className='sitemap'>
+      <div className='border-b border-gray-200 mt-7.5 py-18 px-5 xl:px-24 xl:py-18'>
         <div className='flex justify-center mb-8 xl:mb-18'>
           <img
-            src='images/content/logo.png'
+            src='/images/content/logo.png'
             alt='Luxspace | Fulfill your house with beautiful furniture'
           />
         </div>
@@ -17,17 +17,26 @@ export default function Sitemap() {
               <h5 className='text-lg font-semibold mb-4 relative'>Overview</h5>
               <ul className='h-0 invisible md:h-auto md:visible overflow-hidden'>
                 <li>
-                  <Link to='/shipping' className='hover:underline mb-2 block'>
+                  <Link
+                    to='/shipping'
+                    className='hover:underline mb-2 block text-base font-normal'
+                  >
                     Shipping
                   </Link>
                 </li>
                 <li>
-                  <Link to='/refund' className='hover:underline mb-2 block'>
+                  <Link
+                    to='/refund'
+                    className='hover:underline mb-2 block text-base font-normal'
+                  >
                     Refund
                   </Link>
                 </li>
                 <li>
-                  <Link to='/promotion' className='hover:underline block'>
+                  <Link
+                    to='/promotion'
+                    className='hover:underline block text-base font-normal'
+                  >
                     Promotion
                   </Link>
                 </li>
@@ -37,17 +46,26 @@ export default function Sitemap() {
               <h5 className='text-lg font-semibold mb-4 relative'>Company</h5>
               <ul className='h-0 invisible md:h-auto md:visible overflow-hidden'>
                 <li>
-                  <Link to='/about' className='hover:underline mb-2 block'>
+                  <Link
+                    to='/about'
+                    className='hover:underline mb-2 block text-base font-normal'
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to='/career' className='hover:underline mb-2 block'>
+                  <Link
+                    to='/career'
+                    className='hover:underline mb-2 block text-base font-normal'
+                  >
                     Career
                   </Link>
                 </li>
                 <li>
-                  <Link to='/contact-us' className='hover:underline block'>
+                  <Link
+                    to='/contact-us'
+                    className='hover:underline block text-base font-normal'
+                  >
                     Contact Us
                   </Link>
                 </li>
@@ -59,7 +77,7 @@ export default function Sitemap() {
                 <li>
                   <Link
                     to='/terms-conds'
-                    className='hover:underline mb-2 block'
+                    className='hover:underline mb-2 block text-base font-normal'
                   >
                     Terms & Conds
                   </Link>
@@ -67,13 +85,16 @@ export default function Sitemap() {
                 <li>
                   <Link
                     to='/privacy-policy'
-                    className='hover:underline mb-2 block'
+                    className='hover:underline mb-2 block text-base font-normal'
                   >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to='/for-developer' className='hover:underline block'>
+                  <Link
+                    to='/for-developer'
+                    className='hover:underline block text-base font-normal'
+                  >
                     For Developer
                   </Link>
                 </li>
@@ -90,7 +111,7 @@ export default function Sitemap() {
                     className='bg-gray-100 rounded-xl py-3 px-5 w-full focus:outline-none'
                     placeholder='Your email adress'
                   />
-                  <button className='bg-pink-400 absolute rounded-xl right-0 p-3'>
+                  <button className='bg-pink-300 absolute rounded-xl right-0 p-3'>
                     <svg
                       width='24'
                       height='24'

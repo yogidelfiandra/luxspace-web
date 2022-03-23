@@ -10,7 +10,7 @@ import Hero from '../parts/HomePage/Hero';
 export default function HomePage(props) {
   return (
     <>
-      <Header />
+      <Header theme='white' position='absolute' />
       <Hero />
       <BrowseRoom />
       <JustArrived />
