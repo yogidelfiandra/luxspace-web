@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Header({ theme, position }) {
   return (
-    <header className={[position, 'w-full z-50 px-5 xl:px-24'].join(' ')}>
-      <div className='container mx-auto py-7 xl:py-10'>
+    <header className={[position, 'w-full z-20 px-5 xl:px-24'].join(' ')}>
+      <div className='container mx-auto py-7 md:py-4 xl:py-10'>
         <div className='flex flex-stretch items-center'>
           <div className='w-56 items-center flex'>
             <Link to='/'>
@@ -17,7 +17,7 @@ export default function Header({ theme, position }) {
           <div className='w-full'></div>
           <div className='w-auto'>
             <ul
-              className='fixed text-base bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center xl:space-x-8'
+              className='fixed text-base md:text-md bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center md:space-x-4 xl:space-x-8'
               id='menu'
             >
               <li className='py-6 md:py-0'>

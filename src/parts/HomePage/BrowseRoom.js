@@ -25,7 +25,7 @@ export default function BrowseRoom() {
                 className='w-full h-full object-cover object-center overlay overflow-hidden rounded-xl opacity-75 md:opacity-100'
               />
             </div>
-            <div className='overlay left-0 top-0 bottom-0 flex justify-center flex-col pl-48 md:pl-72'>
+            <div className='overlay left-0 top-0 bottom-0 flex justify-center flex-col pl-48 md:pl-32 xl:pl-72'>
               <h5 className='text-lg font-semibold'>Living Room</h5>
               <span className='text-sm font-normal'>18.309 items</span>
             </div>
@@ -75,7 +75,7 @@ export default function BrowseRoom() {
                 className='w-full h-full object-cover object-center overlay overflow-hidden rounded-xl opacity-75 md:opacity-100'
               />
             </div>
-            <div className='overlay inset-0 flex justify-center flex-col pl-48 md:pl-72'>
+            <div className='overlay inset-0 flex justify-center flex-col pl-48 md:pl-32 xl:pl-72'>
               <h5 className='text-lg font-semibold'>Children Room</h5>
               <span className='text-sm font-normal'>837 items</span>
             </div>
