@@ -47,8 +47,8 @@ function Loading({ ratio = {} }) {
           <div
             className={`animate-pulse overlay ${ratio?.meta?.[item.ratio.md]}`}
           >
-            <div className='w-36 h-2 bg-slate-500 rounded-full mt-3'></div>
-            <div className='w-24 h-2 bg-slate-500 rounded-full mt-2'></div>
+            <div className='w-36 h-2 bg-slate-300 rounded-full mt-3'></div>
+            <div className='w-24 h-2 bg-slate-300 rounded-full mt-2'></div>
           </div>
         </div>
       </div>
@@ -57,14 +57,11 @@ function Loading({ ratio = {} }) {
 }
 
 export default function BrowseRoom() {
-  const { data, status, error, run, isLoading } = useAsync({
-    data: { username: '' },
-  });
+  const { data, status, error, run, isLoading } = useAsync();
+
   useEffect(() => {
     run(fetch({ url: '/api/categories/?page=1&limit=4' }));
   }, [run]);
-
-  console.log(data, status, error);
 
   const ratioClassNames = {
     wrapper: {
