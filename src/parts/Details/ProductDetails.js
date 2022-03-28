@@ -1,82 +1,47 @@
-import React from 'react';
+import parse from 'html-react-parser';
+import React, { useState } from 'react';
 
-export default function ProductDetails() {
+export default function ProductDetails({ data }) {
+  const [slider, setSlider] = useState(() => data?.imgUrls?.[0] || '');
+
   return (
     <section className='container mx-auto xl:px-24'>
       <div className='flex flex-wrap my-5 md:my-18'>
         <div className='w-full md:hidden px-5'>
-          <h2 className='font-semibold text-4.5xl mb-2.5'>Chair Thatty</h2>
-          <span className='text-lg mb-1.5'>IDR 12.000.000</span>
+          <h2 className='font-semibold text-4.5xl mb-2.5'>{data.title}</h2>
+          <span className='text-lg mb-1.5'>IDR {data.price}</span>
         </div>
         <div className='flex-1'>
           <div className='slider'>
             <div className='thumbnail'>
-              <div className='px-2.5 xl:px-0'>
-                <div
-                  className='item selected'
-                  data-img='/images/content/showcase-1.front.jpg'
-                >
-                  <img
-                    src='/images/content/showcase-1.front.jpg'
-                    alt='front'
-                    className='object-cover w-full h-full rounded-lg'
-                  />
-                </div>
-              </div>
-              <div className='px-2.5 xl:px-0'>
-                <div
-                  className='item'
-                  data-img='/images/content/showcase-1.back.jpg'
-                >
-                  <img
-                    src='/images/content/showcase-1.back.jpg'
-                    alt='back'
-                    className='object-cover w-full h-full rounded-lg'
-                  />
-                </div>
-              </div>
-              <div className='px-2.5 xl:px-0'>
-                <div
-                  className='item'
-                  data-img='/images/content/showcase-1.rear.jpg'
-                >
-                  <img
-                    src='/images/content/showcase-1.rear.jpg'
-                    alt='rear'
-                    className='object-cover w-full h-full rounded-lg'
-                  />
-                </div>
-              </div>
-              <div className='px-2.5 xl:px-0'>
-                <div
-                  className='item'
-                  data-img='/images/content/showcase-1.side.jpg'
-                >
-                  <img
-                    src='/images/content/showcase-1.side.jpg'
-                    alt='side'
-                    className='object-cover w-full h-full rounded-lg'
-                  />
-                </div>
-              </div>
-              <div className='px-2.5 xl:px-0'>
-                <div
-                  className='item'
-                  data-img='/images/content/showcase-1.top.jpg'
-                >
-                  <img
-                    src='/images/content/showcase-1.top.jpg'
-                    alt='top'
-                    className='object-cover w-full h-full rounded-lg'
-                  />
-                </div>
-              </div>
+              {data?.imgUrls?.map((item) => {
+                return (
+                  <div
+                    className='px-2.5 xl:px-0'
+                    key={item}
+                    onClick={() => setSlider(item)}
+                  >
+                    <div
+                      className={[
+                        'item',
+                        slider === item ? 'bg-slate-100 selected' : '',
+                      ].join(' ')}
+                    >
+                      <img
+                        src={item}
+                        alt={item}
+                        className='object-cover w-full h-full rounded-lg'
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <div className='preview'>
               <div className='item rounded-lg h-full overflow-hidden'>
                 <img
-                  src='/images/content/showcase-1.front.jpg'
-                  alt='front'
+                  src={slider}
+                  alt={slider}
                   className='object-cover w-full h-full rounded-lg'
                 />
               </div>
@@ -85,9 +50,9 @@ export default function ProductDetails() {
         </div>
         <div className='flex-1 px-5 mb-7.5 md:mb-0 md:pl-7'>
           <h2 className='text-4.5xl mb-2.5 font-semibold hidden md:block'>
-            Chair Thatty
+            {data.title}
           </h2>
-          <p className='text-lg mb-1.5 hidden md:block'>IDR 12.000.000</p>
+          <p className='text-lg mb-1.5 hidden md:block'>IDR {data.price}</p>
 
           <a
             href='cart.html'
@@ -110,16 +75,7 @@ export default function ProductDetails() {
           <hr className='my-8 xl:my-10' />
 
           <h6 className='text-base font-semibold mb-4'>About the product</h6>
-          <p className='text-base leading-8 mb-6'>
-            Tailored to a level of perfection synonymous with that of a Savile
-            Row suit and with understated quality in the detail, Jetty has been
-            influenced by timeless 1950s style.
-          </p>
-          <p className='text-base leading-8'>
-            Providing a subtle nod to the past, Jetty also provides a perfect
-            solution for the way we work today. A comprehensive product family,
-            Jetty features a variety of elegant chairs and sofas.
-          </p>
+          {data.description ? parse(data.description) : 'No description'}
         </div>
       </div>
     </section>
