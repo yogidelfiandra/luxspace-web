@@ -1,9 +1,12 @@
+import { useGlobalContext } from 'helpers/hooks/useGlobalContext';
 import parse from 'html-react-parser';
 import React, { useState } from 'react';
 
 export default function ProductDetails({ data }) {
   const [slider, setSlider] = useState(() => data?.imgUrls?.[0] || '');
 
+  const { state, dispatch } = useGlobalContext();
+  console.log(state, dispatch);
   return (
     <section className='container mx-auto xl:px-24'>
       <div className='flex flex-wrap my-5 md:my-18'>
@@ -54,9 +57,14 @@ export default function ProductDetails({ data }) {
           </h2>
           <p className='text-lg mb-1.5 hidden md:block'>IDR {data.price}</p>
 
-          <a
-            href='cart.html'
+          <button
             className='transition-all duration-200 bg-pink-300 text-black focus:bg-black focus:text-pink-300 rounded-full px-8 py-3 mt-1.5 md:mt-6 inline-flex w-full justify-center text-base font-semibold md:w-auto'
+            onClick={() =>
+              dispatch({
+                type: 'ADD_TO_CART',
+                item: data,
+              })
+            }
           >
             <svg
               className='fill-current mr-3'
@@ -71,7 +79,7 @@ export default function ProductDetails({ data }) {
               <path d='M25.6499 4.508C25.407 4.22245 25.0472 4.05871 24.6626 4.05871H4.82655L4.42595 2.19571C4.34232 1.80709 4.06563 1.48078 3.68565 1.32272L0.890528 0.160438C0.567841 0.0261566 0.192825 0.168008 0.0528584 0.477043C-0.0872597 0.786176 0.0608116 1.14549 0.383347 1.27957L3.17852 2.4419L6.2598 16.7708C6.38117 17.3351 6.90578 17.7446 7.50723 17.7446H22.7635C23.1152 17.7446 23.4003 17.4715 23.4003 17.1346C23.4003 16.7976 23.1152 16.5245 22.7635 16.5245H7.50728L7.13247 14.7815H22.8814C23.4828 14.7815 24.0075 14.3719 24.1288 13.8076L25.9101 5.52488C25.9876 5.16421 25.8928 4.79349 25.6499 4.508ZM22.8814 13.5615H6.87012L5.08895 5.27879L24.6626 5.27884L22.8814 13.5615Z' />
             </svg>
             Add to Cart
-          </a>
+          </button>
           <hr className='my-8 xl:my-10' />
 
           <h6 className='text-base font-semibold mb-4'>About the product</h6>
