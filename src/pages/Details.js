@@ -107,6 +107,11 @@ export default function Details() {
     run(fetch({ url: `/api/products/${idp}` }));
   }, [run]);
 
+  useEffect(() => {
+    window.title = 'Details Page';
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <Header theme='black' />

@@ -5,8 +5,7 @@ import React, { useState } from 'react';
 export default function ProductDetails({ data }) {
   const [slider, setSlider] = useState(() => data?.imgUrls?.[0] || '');
 
-  const { state, dispatch } = useGlobalContext();
-  console.log(state, dispatch);
+  const { dispatch } = useGlobalContext();
   return (
     <section className='container mx-auto xl:px-24'>
       <div className='flex flex-wrap my-5 md:my-18'>
