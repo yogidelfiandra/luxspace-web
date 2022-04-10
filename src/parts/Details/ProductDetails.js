@@ -1,6 +1,7 @@
 import { useGlobalContext } from 'helpers/hooks/useGlobalContext';
 import parse from 'html-react-parser';
 import React, { useState } from 'react';
+import '../../helpers/format/currency';
 
 export default function ProductDetails({ data }) {
   const [slider, setSlider] = useState(() => data?.imgUrls?.[0] || '');
@@ -11,7 +12,7 @@ export default function ProductDetails({ data }) {
       <div className='flex flex-wrap my-5 md:my-18'>
         <div className='w-full md:hidden px-5'>
           <h2 className='font-semibold text-4.5xl mb-2.5'>{data.title}</h2>
-          <span className='text-lg mb-1.5'>IDR {data.price}</span>
+          <span className='text-lg mb-1.5'>{data.price.currency()}</span>
         </div>
         <div className='flex-1'>
           <div className='slider'>
@@ -54,7 +55,9 @@ export default function ProductDetails({ data }) {
           <h2 className='text-4.5xl mb-2.5 font-semibold hidden md:block'>
             {data.title}
           </h2>
-          <p className='text-lg mb-1.5 hidden md:block'>IDR {data.price}</p>
+          <p className='text-lg mb-1.5 hidden md:block'>
+            {data.price.currency()}
+          </p>
 
           <button
             className='transition-all duration-200 bg-pink-300 text-black focus:bg-black focus:text-pink-300 rounded-full px-8 py-3 mt-1.5 md:mt-6 inline-flex w-full justify-center text-base font-semibold md:w-auto'
