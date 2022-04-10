@@ -1,6 +1,7 @@
 import Breadcrumb from 'components/Breadcrumb';
 import fetch from 'helpers/fetch';
 import useAsync from 'helpers/hooks/useAsync';
+import useScrollToTop from 'helpers/hooks/useScrollToTop';
 import ProductDetails from 'parts/Details/ProductDetails';
 import Suggestion from 'parts/Details/Suggestion';
 import Footer from 'parts/Footer';
@@ -99,6 +100,7 @@ function LoadingSuggestion() {
 }
 
 export default function Details() {
+  useScrollToTop();
   const { idp } = useParams();
 
   const { data, run, isLoading } = useAsync();
@@ -106,11 +108,6 @@ export default function Details() {
   useEffect(() => {
     run(fetch({ url: `/api/products/${idp}` }));
   }, [run, idp]);
-
-  useEffect(() => {
-    window.title = 'Details Page';
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>

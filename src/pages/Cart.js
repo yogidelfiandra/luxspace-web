@@ -1,4 +1,5 @@
 import Breadcrumb from 'components/Breadcrumb';
+import useScrollToTop from 'helpers/hooks/useScrollToTop';
 import ShippingDetails from 'parts/Cart/ShippingDetails';
 import ShoppingCart from 'parts/Cart/ShoppingCart';
 import Footer from 'parts/Footer';
@@ -7,6 +8,7 @@ import Sitemap from 'parts/Sitemap';
 import React from 'react';
 
 export default function Cart() {
+  useScrollToTop();
   return (
     <>
       <Header theme='black' />

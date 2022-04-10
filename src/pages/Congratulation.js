@@ -1,7 +1,9 @@
+import useScrollToTop from 'helpers/hooks/useScrollToTop';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Congratulation() {
+  useScrollToTop();
   return (
     <>
       <section className='px-5 xl:px-24'>
