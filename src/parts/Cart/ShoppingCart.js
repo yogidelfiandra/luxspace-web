@@ -1,6 +1,9 @@
+import { useGlobalContext } from 'helpers/hooks/useGlobalContext';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ShoppingCart() {
+  const { state, dispatch } = useGlobalContext();
   return (
     <div
       className='w-full px-5 mb-7.5 md:w-8/12 md:mb-0 xl:pl-12.5'
@@ -35,141 +38,64 @@ export default function ShoppingCart() {
         </div>
       </div>
 
-      <p id='cart-empty' className='hidden text-center py-8'>
-        Ooops... Cart is empty
-        <a href='details.html' className='underline'>
-          Shop Now
-        </a>
-      </p>
-
-      {/* <!-- START: ROW 1 --> */}
-      <div
-        className='flex flex-start flex-wrap items-center mb-5 -mx-4'
-        data-row='1'
-      >
-        <div className='px-4 flex-none'>
-          <div className='' style={{ width: 90, height: 90 }}>
-            <img
-              src='/images/content/chair-1.png'
-              alt='chair-1'
-              className='object-cover rounded-xl w-full h-full'
-            />
-          </div>
-        </div>
-        <div className='px-4 w-auto flex-1 md:w-5/12'>
-          <div className=''>
-            <h6 className='font-semibold text-base xl:text-lg leading-8 mb-1.5'>
-              Saman Kakka
-            </h6>
-            <span className='text-sm md:text-base '>Office Room</span>
-            <h6 className='font-semibold mt-1.5 text-md block md:hidden'>
-              IDR 28.000.000
-            </h6>
-          </div>
-        </div>
-        <div className='px-4 w-auto flex-none md:flex-1 md:w-5/12 hidden md:block'>
-          <div className=''>
-            <h6 className='font-semibold text-base'>IDR 28.000.000</h6>
-          </div>
-        </div>
-        <div className='px-4 w-2/12'>
-          <div className='text-center'>
-            <button
-              data-delete-item='1'
-              className='text-red-600 border-none focus:outline-none px-3 py-1'
+      {Object.keys(state.cart).length === 0 ? (
+        <p id='cart-empty' className='text-center py-8'>
+          Ooops... Cart is empty{' '}
+          <Link to='/' className='underline'>
+            Shop Now
+          </Link>
+        </p>
+      ) : (
+        Object.keys(state.cart).map((key) => {
+          const item = state.cart[key];
+          return (
+            <div
+              className='flex flex-start flex-wrap items-center mb-5 -mx-4'
+              key={key}
             >
-              X
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* <!-- END: ROW 1 --> */}
-
-      {/* <!-- START: ROW 2 --> */}
-      <div
-        className='flex flex-start flex-wrap items-center mb-5 -mx-4'
-        data-row='2'
-      >
-        <div className='px-4 flex-none'>
-          <div className='' style={{ width: 90, height: 90 }}>
-            <img
-              src='/images/content/chair-2.png'
-              alt='chair-2'
-              className='object-cover rounded-xl w-full h-full'
-            />
-          </div>
-        </div>
-        <div className='px-4 w-auto flex-1 md:w-5/12'>
-          <div className=''>
-            <h6 className='font-semibold text-base xl:text-lg leading-8 mb-1.5'>
-              Green Seat
-            </h6>
-            <span className='text-sm md:text-base'>Office Room</span>
-            <h6 className='font-semibold mt-1.5 text-md md:text-lg block md:hidden'>
-              IDR 28.000.000
-            </h6>
-          </div>
-        </div>
-        <div className='px-4 w-auto flex-none md:flex-1 md:w-5/12 hidden md:block'>
-          <div className=''>
-            <h6 className='font-semibold text-base'>IDR 12.500.000</h6>
-          </div>
-        </div>
-        <div className='px-4 w-2/12'>
-          <div className='text-center'>
-            <button
-              data-delete-item='2'
-              className='text-red-600 border-none focus:outline-none px-3 py-1'
-            >
-              X
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* <!-- END: ROW 2 --> */}
-
-      {/* <!-- START: ROW 3 --> */}
-      <div
-        className='flex flex-start flex-wrap items-center -mx-4'
-        data-row='3'
-      >
-        <div className='px-4 flex-none'>
-          <div className='' style={{ width: 90, height: 90 }}>
-            <img
-              src='/images/content/chair-3.png'
-              alt='chair-3'
-              className='object-cover rounded-xl w-full h-full'
-            />
-          </div>
-        </div>
-        <div className='px-4 w-auto flex-1 md:w-5/12'>
-          <div className=''>
-            <h6 className='font-semibold text-base xl:text-lg leading-8 mb-1.5'>
-              Pacific
-            </h6>
-            <span className='text-sm md:text-base'>Office Room</span>
-            <h6 className='font-semibold mt-1.5 text-md md:text-lg block md:hidden'>
-              IDR 28.000.000
-            </h6>
-          </div>
-        </div>
-        <div className='px-4 w-auto flex-none md:flex-1 md:w-5/12 hidden md:block'>
-          <div className=''>
-            <h6 className='font-semibold text-base'>IDR 88.800.000</h6>
-          </div>
-        </div>
-        <div className='px-4 w-2/12'>
-          <div className='text-center'>
-            <button
-              data-delete-item='3'
-              className='text-red-600 border-none focus:outline-none px-3 py-1'
-            >
-              X
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* <!-- END: ROW 3 --> */}
+              <div className='px-4 flex-none'>
+                <div className='' style={{ width: 90, height: 90 }}>
+                  <img
+                    src={item.imgUrls[0]}
+                    alt={item.title}
+                    className='object-cover rounded-xl w-full h-full'
+                  />
+                </div>
+              </div>
+              <div className='px-4 w-auto flex-1 md:w-5/12'>
+                <div className=''>
+                  <h6 className='font-semibold text-base xl:text-lg leading-8 mb-1.5'>
+                    {item.title}
+                  </h6>
+                  <span className='text-sm md:text-base '>
+                    {item.category.title}
+                  </span>
+                  <h6 className='font-semibold mt-1.5 text-md block md:hidden'>
+                    IDR {item.price}
+                  </h6>
+                </div>
+              </div>
+              <div className='px-4 w-auto flex-none md:flex-1 md:w-5/12 hidden md:block'>
+                <div className=''>
+                  <h6 className='font-semibold text-base'>IDR {item.price}</h6>
+                </div>
+              </div>
+              <div className='px-4 w-2/12'>
+                <div className='text-center'>
+                  <button
+                    onClick={() =>
+                      dispatch({ type: 'REMOVE_FROM_CART', id: item.id })
+                    }
+                    className='text-red-600 border-none focus:outline-none px-3 py-1'
+                  >
+                    X
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      )}
     </div>
   );
 }

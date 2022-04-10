@@ -1,22 +1,11 @@
-import Breadcrumb from 'components/Breadcrumb';
-import Footer from 'parts/Footer';
-import Header from 'parts/Header';
-import Sitemap from 'parts/Sitemap';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Congratulation() {
   return (
     <>
-      <Header theme='black' />
-      <Breadcrumb
-        list={[
-          { url: '/', name: 'Home' },
-          { url: '/congratulation', name: 'Success Checkout' },
-        ]}
-      />
       <section className='px-5 xl:px-24'>
-        <div className='container mx-auto mt-12 min-h-screen'>
+        <div className='container mx-auto min-h-screen'>
           <div className='flex flex-col items-center justify-center'>
             <div className='w-full md:w-4/12 text-center'>
               <img
@@ -41,8 +30,6 @@ export default function Congratulation() {
           </div>
         </div>
       </section>
-      <Sitemap />
-      <Footer />
     </>
   );
 }
