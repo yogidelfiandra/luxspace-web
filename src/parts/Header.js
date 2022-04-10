@@ -21,7 +21,7 @@ export default function Header({ theme, position }) {
   }, [state.cart]);
 
   return (
-    <header className={[position, 'w-full z-20 px-5 xl:px-24'].join(' ')}>
+    <header className={[position, 'w-full z-40 px-5 xl:px-24'].join(' ')}>
       <div className='container mx-auto py-7 md:py-4 xl:py-10'>
         <div className='flex flex-stretch items-center'>
           <div className='w-56 items-center flex'>
@@ -35,7 +35,12 @@ export default function Header({ theme, position }) {
           <div className='w-full'></div>
           <div className='w-auto'>
             <ul
-              className='fixed text-base md:text-md bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center md:space-x-4 xl:space-x-8'
+              className={[
+                'fixed text-base md:text-md bg-white inset-0 flex flex-col items-center justify-center md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center md:space-x-4 xl:space-x-8',
+                toggleMainMenu
+                  ? 'opacity-100 z-30 visible'
+                  : 'invisible opacity-0',
+              ].join(' ')}
               id='menu'
             >
               <li className='py-6 md:py-0'>
@@ -45,7 +50,7 @@ export default function Header({ theme, position }) {
                     'hover:underline',
                     theme === 'white'
                       ? 'text-black md:text-white'
-                      : 'text-white md:text-black',
+                      : 'text-black md:text-black',
                   ].join(' ')}
                 >
                   Showcase
@@ -58,7 +63,7 @@ export default function Header({ theme, position }) {
                     'hover:underline',
                     theme === 'white'
                       ? 'text-black md:text-white'
-                      : 'text-white md:text-black',
+                      : 'text-black md:text-black',
                   ].join(' ')}
                 >
                   Catalog
@@ -71,7 +76,7 @@ export default function Header({ theme, position }) {
                     'hover:underline',
                     theme === 'white'
                       ? 'text-black md:text-white'
-                      : 'text-white md:text-black',
+                      : 'text-black md:text-black',
                   ].join(' ')}
                 >
                   Delivery
@@ -84,7 +89,7 @@ export default function Header({ theme, position }) {
                     'hover:underline',
                     theme === 'white'
                       ? 'text-black md:text-white'
-                      : 'text-white md:text-black',
+                      : 'text-black md:text-black',
                   ].join(' ')}
                 >
                   Rewards
@@ -96,8 +101,14 @@ export default function Header({ theme, position }) {
             <ul className='items-center flex'>
               <li className='ml-6 block md:hidden'>
                 <button
-                  id='menu-toggler'
-                  className='relative flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none'
+                  className={[
+                    'flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none',
+                    toggleMainMenu ? 'fixed top-0 right-0' : 'relative',
+                    theme === 'white'
+                      ? 'text-black md:text-white'
+                      : 'text-black md:text-black',
+                  ].join(' ')}
+                  onClick={() => setToggleMainMenu((prev) => !prev)}
                 >
                   <svg
                     className='fill-current'
