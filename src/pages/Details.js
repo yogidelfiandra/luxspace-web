@@ -1,9 +1,9 @@
 import Breadcrumb from 'components/Breadcrumb';
 import fetch from 'helpers/fetch';
 import useAsync from 'helpers/hooks/useAsync';
-import useScrollToTop from 'helpers/hooks/useScrollToTop';
 import ProductDetails from 'parts/Details/ProductDetails';
 import Suggestion from 'parts/Details/Suggestion';
+import Documents from 'parts/Document';
 import Footer from 'parts/Footer';
 import Header from 'parts/Header';
 import Sitemap from 'parts/Sitemap';
@@ -100,7 +100,6 @@ function LoadingSuggestion() {
 }
 
 export default function Details() {
-  useScrollToTop();
   const { idp } = useParams();
 
   const { data, run, isLoading } = useAsync();
@@ -110,7 +109,7 @@ export default function Details() {
   }, [run, idp]);
 
   return (
-    <>
+    <Documents>
       <Header theme='black' />
       <Breadcrumb
         list={[
@@ -128,6 +127,6 @@ export default function Details() {
 
       <Sitemap />
       <Footer />
-    </>
+    </Documents>
   );
 }

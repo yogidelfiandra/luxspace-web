@@ -1,11 +1,10 @@
-import useScrollToTop from 'helpers/hooks/useScrollToTop';
+import Documents from 'parts/Document';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Congratulation() {
-  useScrollToTop();
   return (
-    <>
+    <Documents>
       <section className='px-5 xl:px-24'>
         <div className='container mx-auto min-h-screen'>
           <div className='flex flex-col items-center justify-center'>
@@ -32,6 +31,6 @@ export default function Congratulation() {
           </div>
         </div>
       </section>
-    </>
+    </Documents>
   );
 }
