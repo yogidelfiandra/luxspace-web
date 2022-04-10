@@ -6,6 +6,7 @@ import Suggestion from 'parts/Details/Suggestion';
 import Documents from 'parts/Document';
 import Footer from 'parts/Footer';
 import Header from 'parts/Header';
+import PageErrorMessage from 'parts/PageErrorMessage';
 import Sitemap from 'parts/Sitemap';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -102,7 +103,7 @@ function LoadingSuggestion() {
 export default function Details() {
   const { idp } = useParams();
 
-  const { data, run, isLoading } = useAsync();
+  const { data, error, run, isLoading, isError } = useAsync();
 
   useEffect(() => {
     run(fetch({ url: `/api/products/${idp}` }));
@@ -118,11 +119,24 @@ export default function Details() {
           { url: '/categories/7654321/details/784', name: 'Details' },
         ]}
       />
-      {isLoading ? <LoadingProductDetails /> : <ProductDetails data={data} />}
-      {isLoading ? (
-        <LoadingSuggestion />
+      {isError ? (
+        <PageErrorMessage
+          title='Product Not Found'
+          body={error.errors.message}
+        />
       ) : (
-        <Suggestion data={data?.relatedProducts || {}} />
+        <>
+          {isLoading ? (
+            <LoadingProductDetails />
+          ) : (
+            <ProductDetails data={data} />
+          )}
+          {isLoading ? (
+            <LoadingSuggestion />
+          ) : (
+            <Suggestion data={data?.relatedProducts || {}} />
+          )}
+        </>
       )}
 
       <Sitemap />
